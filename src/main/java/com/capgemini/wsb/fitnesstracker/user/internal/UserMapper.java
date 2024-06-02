@@ -10,7 +10,7 @@ class UserMapper {
         return new UserDto(user.getId(),
                            user.getFirstName(),
                            user.getLastName(),
-                           user.getBirthdate(),
+                           user.getDateOfBirth(),
                            user.getEmail());
     }
 
@@ -18,7 +18,7 @@ class UserMapper {
         return new User(
                         userDto.firstName(),
                         userDto.lastName(),
-                        userDto.birthdate(),
+                        userDto.dateOfBirth(),
                         userDto.email());
     }
 
