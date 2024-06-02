@@ -1,10 +1,8 @@
 package com.capgemini.wsb.fitnesstracker.user.api;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import java.time.LocalDate;
+
 
 @Entity
 public class User {
@@ -16,11 +14,9 @@ public class User {
     private LocalDate dateOfBirth;
     private String email;
 
-    // Konstruktor bezparametrowy
     public User() {
     }
 
-    // Konstruktor z parametrami
     public User(String firstName, String lastName, LocalDate dateOfBirth, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -69,4 +65,3 @@ public class User {
         this.email = email;
     }
 }
-

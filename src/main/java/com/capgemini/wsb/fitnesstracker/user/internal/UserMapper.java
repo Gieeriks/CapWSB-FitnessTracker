@@ -1,25 +1,29 @@
 package com.capgemini.wsb.fitnesstracker.user.internal;
 
 import com.capgemini.wsb.fitnesstracker.user.api.User;
-import org.springframework.stereotype.Component;
+import com.capgemini.wsb.fitnesstracker.user.api.UserDto;
 
-@Component
-class UserMapper {
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-    UserDto toDto(User user) {
-        return new UserDto(user.getId(),
-                           user.getFirstName(),
-                           user.getLastName(),
-                           user.getDateOfBirth(),
-                           user.getEmail());
+public class UserMapper {
+
+    public static UserDto toDto(User user) {
+        return new UserDto(
+                user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getDateOfBirth(),
+                user.getEmail()
+        );
     }
 
-    User toEntity(UserDto userDto) {
+    public static User toEntity(UserDto userDto) {
         return new User(
-                        userDto.firstName(),
-                        userDto.lastName(),
-                        userDto.dateOfBirth(),
-                        userDto.email());
+                userDto.getFirstName(),
+                userDto.getLastName(),
+                userDto.getDateOfBirth(),
+                userDto.getEmail()
+        );
     }
-
 }
